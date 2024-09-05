@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BankController;
-use App\Http\Controllers\UserTableController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
