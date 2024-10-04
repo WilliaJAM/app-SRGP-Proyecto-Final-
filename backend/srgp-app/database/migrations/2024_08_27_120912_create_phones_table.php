@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
             $table->string('types');
-            $table->unsignedBigInteger('conutries_id');
- 
-            $table->foreign('conutries_id')->references('id')->on('countries');
+            $table->unsignedBigInteger('countries_id');
+            $table->string('number', 15);
+
+            $table->foreign('countries_id')->references('id')->on('countries');
             $table->timestamps();
         });
     }

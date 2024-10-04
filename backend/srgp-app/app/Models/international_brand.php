@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class international_brand extends Model
 {
     use HasFactory;
+
+    protected $fillable= ['brand'];
+
 }
