@@ -4,14 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\international_brand;
 class InternationalBrandController extends Controller
 {
     //
     public function save (Request $request){
+
+        // $brand = new international_brand();
+        // $brand->brand = $request->brand;
+        // $brand->save();
+
+        $brand= international_brand::create([
+            'brand' => $request->brand,
+        ]);
+
         return response()->json([
             'status' => 'Conectado',
-            'message' => 'Guardado correctamente'
+            'message' => 'Guardado correctamente',
+            'marca' => $brand->brand
         ]);
 
     }

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class phone extends Model
 {
     use HasFactory;
+    protected $fillable= ['types', 'countries_id', 'number'];
 }

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class card_type extends Model
 {
     use HasFactory;
+
+    protected $fillable= ['types_of_cards'];
+
 }
