@@ -24,15 +24,15 @@ return new class extends Migration
             $table->boolean('account_status');
             $table->string('email')->unique();
             $table->string('user_id')->unique();
-
+            $table->string('phone');
+            $table->string('type_phone');
+            $table->string('neighborhood_name');
+            $table->string('address');
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->unsignedBigInteger('rol_id');
             $table->foreign('rol_id')->references('id')->on('rols');
-
-            $table->unsignedBigInteger('address_id');
-            $table->foreign('address_id')->references('id')->on('addresses');
-
-            $table->unsignedBigInteger('phone_id');
-            $table->foreign('phone_id')->references('id')->on('phones');
+            $table->timestamps();
         });
     }
 

@@ -22,9 +22,10 @@ class user_table extends Model
     "email", 
     "user_id", 
     "rol_id", 
-    "address_id", 
-    "phone_id", 
-    "card_id"
-    
-        ];
+    "phone",
+    "type_phone",
+    "neighborhood_name",
+    "address",
+    "city_id"
+];
 }

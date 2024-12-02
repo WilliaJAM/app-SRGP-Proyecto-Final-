@@ -36,9 +36,10 @@ class UserTableController extends Controller
             "email" => $request->email, 
             "user_id" => $request->user_id, 
             "rol_id" => $request->rol_id, 
-            "address_id" => $request->address_id, 
-            "phone_id" => $request->phone_id, 
-            "card_id" => $request->card_id
+            "type_phone"=> $request->type_phone,
+            "neighborhood_name"=> $request->neighborhood_name,
+            "address"=>$request->address,
+            "city_id"=>$request->city_id,
         ]);
 
         return response()->json([
@@ -64,9 +65,10 @@ class UserTableController extends Controller
             "email" => $request->email, 
             "user_id" => $request->user_id, 
             "rol_id" => $request->rol_id, 
-            "address_id" => $request->address_id, 
-            "phone_id" => $request->phone_id, 
-            "card_id" => $request->card_id
+            "type_phone"=> $request->type_phone,
+            "neighborhood_name"=> $request->neighborhood_name,
+            "address"=>$request->address,
+            "city_id"=>$request->city_id,
         ]);
 
         return response()->json([

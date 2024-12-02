@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('supplier_name');
             $table->string('email');
-
-            $table->unsignedBigInteger('address_id');
-            $table->foreign('address_id')->references('id')->on('addresses');
-
-            $table->unsignedBigInteger('phone_id');
-            $table->foreign('phone_id')->references('id')->on('phones');
+            $table->string('phone');
+            $table->string('type_phone');
+            $table->string('address');
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('cities');
+            
+            
             $table->timestamps();
         });
     }

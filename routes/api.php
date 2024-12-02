@@ -1,5 +1,4 @@
 <?php
-use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\CountriesController;
@@ -7,7 +6,6 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DetailOfTheSaleController;
 use App\Http\Controllers\InventoryController;
-use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\SaleController;
@@ -31,14 +29,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::controller(AddressController::class)->group(function(){
-    Route::get('/adress/get', 'get');
-    Route::post('/adress/save', 'save');
-    Route::put('/adress/update', 'update');
-    Route::delete('/adress/delete', 'delete');
-});
-
 
 Route::controller(CategoryController::class)->group(function(){
     Route::get('/category/get','get');
@@ -87,13 +77,6 @@ Route::controller(InventoryController::class)->group(function(){
     Route::post('/invetory/save','save');
     Route::put('/invetory/update','update');
     Route::delete('/invetory/delete','delete');
-});
-
-Route::controller(PhoneController::class)->group(function(){
-    Route::get('/phone/get','get');
-    Route::post('/phone/save','save');
-    Route::put('/phone/update','update');
-    Route::delete('/phone/delete','delete');
 });
 
 Route::controller(ProductController::class)->group(function(){
