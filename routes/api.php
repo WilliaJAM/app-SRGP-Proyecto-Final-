@@ -32,7 +32,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(CategoryController::class)->group(function(){
     Route::get('/category/get','get');
-    Route::get('/category/get','get');
+    Route::get('/category/getDataById','getDataById');
     Route::post('/category/save','save');
     Route::put('/category/update','update');
     Route::delete('/category/delete','delete');
@@ -40,6 +40,7 @@ Route::controller(CategoryController::class)->group(function(){
 
 Route::controller(CitiesController::class)->group(function(){
     Route::get('/city/get','get');
+    Route::get('/city/getDataById','getDataById');
     Route::post('/city/save','save');
     Route::put('/city/update','update');
     Route::delete('/city/delete','delete');
@@ -55,6 +56,7 @@ Route::controller(CountriesController::class)->group(function(){
 
 Route::controller(CustomerController::class)->group(function(){
     Route::get('/customer/get','get');
+    Route::get('/customer/getDataById','getDataById');
     Route::post('/customer/save','save');
     Route::put('/customer/update','update');
     Route::delete('/customer/delete','delete');
@@ -62,6 +64,7 @@ Route::controller(CustomerController::class)->group(function(){
 
 Route::controller(DepartmentController::class)->group(function(){
     Route::get('/department/get','get');
+    Route::get('/department/getDataById','getDataById');
     Route::post('/department/save','save');
     Route::put('/department/update','update');
     Route::delete('/department/delete','delete');
@@ -76,6 +79,7 @@ Route::controller(DetailOfTheSaleController::class)->group(function(){
 
 Route::controller(InventoryController::class)->group(function(){
     Route::get('/invetory/get','get');
+    Route::get('/invetory/getDataById','getDataById');
     Route::post('/invetory/save','save');
     Route::put('/invetory/update','update');
     Route::delete('/invetory/delete','delete');
@@ -83,6 +87,7 @@ Route::controller(InventoryController::class)->group(function(){
 
 Route::controller(ProductController::class)->group(function(){
     Route::get('/product/get','get');
+    Route::get('/product/getDataById','getDataById');
     Route::post('/product/save','save');
     Route::put('/product/update','update');
     Route::delete('/product/delete','delete');
@@ -90,6 +95,7 @@ Route::controller(ProductController::class)->group(function(){
 
 Route::controller(RolController::class)->group(function(){
     Route::get('/rol/get','get');
+    Route::get('/rol/getDataById','getDataById');
     Route::post('/rol/save','save');
     Route::put('/rol/update','update');
     Route::delete('/rol/delete','delete');
@@ -104,6 +110,7 @@ Route::controller(SaleController::class)->group(function(){
 
 Route::controller(SupplierController::class)->group(function(){
     Route::get('/supplier/get','get');
+    Route::get('/supplier/getDataById','getDataById');
     Route::post('/supplier/save','save');
     Route::put('/supplier/update','update');
     Route::delete('/supplier/delete','delete');
@@ -111,6 +118,7 @@ Route::controller(SupplierController::class)->group(function(){
 
 Route::controller(UserTableController::class)->group(function(){
     Route::get('/user/get','get');
+    Route::get('/user/getDataById','getDataById');
     Route::post('/user/save','save');
     Route::put('/user/update','update');
     Route::delete('/user/delete','delete');
