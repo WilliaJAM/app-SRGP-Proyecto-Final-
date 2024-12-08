@@ -16,10 +16,12 @@ class CustomerController extends Controller
             'documentType'=> $request->documentType,
             'identificationNumber'=>$request->identificationNumber,
             'email'=>$request->email,
+            'phone'=> $request->phone,
             'type_phone'=>$request->type_phone,
             'neighborhood_name'=>$request->neighborhood_name,
             'address'=>$request->address,
             'city_id'=>$request->city_id,
+            'rol_id'=>$request->rol_id,
         ]);
 
         return response()->json([
@@ -47,8 +49,12 @@ class CustomerController extends Controller
             'documentType'=> $request->documentType,
             'identificationNumber'=>$request->identificationNumber,
             'email'=>$request->email,
-            'phone_id'=>$request->phone_id,
-            'address_id'=>$request->address_id
+            'phone'=> $request->phone,
+            'type_phone'=>$request->type_phone,
+            'neighborhood_name'=>$request->neighborhood_name,
+            'address'=>$request->address,
+            'city_id'=>$request->city_id,
+            'rol_id'=>$request->rol_id,
         ]);
 
         return response()->json([

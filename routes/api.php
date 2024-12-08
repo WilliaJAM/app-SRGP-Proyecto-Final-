@@ -46,6 +46,7 @@ Route::controller(CitiesController::class)->group(function(){
 
 Route::controller(CountriesController::class)->group(function(){
     Route::get('/country/get','get');
+    Route::get('/country/getDataById','getDataById');
     Route::post('/country/save','save');
     Route::put('/country/update','update');
     Route::delete('/country/delete','delete');

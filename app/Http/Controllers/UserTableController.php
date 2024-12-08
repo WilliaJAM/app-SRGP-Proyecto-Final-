@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\user_table;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class UserTableController extends Controller
 {
@@ -22,17 +23,21 @@ class UserTableController extends Controller
 
     public function save(Request $request){
 
+        
+        $birthdate = Carbon::parse($request->birthdate)->format('Y-m-d');
+        $registration_date = Carbon::parse($request->registration_date)->format('Y-m-d');
+
         $user= user_table::create([
             "name" => $request->name,
             "last_name" => $request->last_name, 
             "image" => $request->image, 
             "cedula" => $request->cedula, 
-            "birthdate" => $request->birthdate, 
+            "birthdate" => $birthdate, 
             "password" => $request->password, 
             "gender" => $request->gender, 
-            "registration_date" => $request->registration_date, 
-            "last_date_of_entry" => $request->last_date_of_entry, 
+            "registration_date" => $registration_date, 
             "account_status" => $request->account_status, 
+            "phone"=> $request->phone,
             "email" => $request->email, 
             "user_id" => $request->user_id, 
             "rol_id" => $request->rol_id, 
@@ -41,6 +46,7 @@ class UserTableController extends Controller
             "address"=>$request->address,
             "city_id"=>$request->city_id,
         ]);
+
 
         return response()->json([
             'status' => '200',
@@ -60,7 +66,6 @@ class UserTableController extends Controller
             "password" => $request->password, 
             "gender" => $request->gender, 
             "registration_date" => $request->registration_date, 
-            "last_date_of_entry" => $request->last_date_of_entry, 
             "account_status" => $request->account_status, 
             "email" => $request->email, 
             "user_id" => $request->user_id, 

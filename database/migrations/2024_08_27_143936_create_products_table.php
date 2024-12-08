@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->text('description');
             $table->string('dimensions');
-            $table->boolean('status');
+            $table->string('status');
             $table->string('id_product');
             $table->unsignedBigInteger('category_id');
  

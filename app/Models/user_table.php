@@ -17,7 +17,6 @@ class user_table extends Model
     "password", 
     "gender", 
     "registration_date", 
-    "last_date_of_entry", 
     "account_status", 
     "email", 
     "user_id", 

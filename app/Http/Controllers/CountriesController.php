@@ -63,4 +63,15 @@ class CountriesController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+
+    public function getDataById (Request $request){
+
+    $country= countries::where( 'id',$request->id)->get();
+
+    return response()->json([
+        'status' => 'Conectado',
+        'message' => 'Consulta con exito',
+        'result'=> $country
+    ]);
+}
 }

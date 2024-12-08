@@ -17,6 +17,7 @@ class customer extends Model
     "type_phone",
     "neighborhood_name",
     "address",
-    "city_id"
+    "city_id",
+    "rol_id"
 ];
 }
