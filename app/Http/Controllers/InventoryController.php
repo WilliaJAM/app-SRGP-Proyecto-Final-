@@ -70,7 +70,7 @@ class InventoryController extends Controller
 
     public function getDataById (Request $request){
 
-        $inventory= inventory::where('id', $request->id->get());
+        $inventory= inventory::where('id', $request->id)->get();
 
         return response()->json([
             'status' => '200',

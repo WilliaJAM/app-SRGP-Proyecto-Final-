@@ -95,7 +95,7 @@ class UserTableController extends Controller
 
     public function getDataById(Request $request){
 
-        $user= user_table::where('id', $request->id->get());
+        $user= user_table::where('id', $request->id)->get();
 
         return response()-> json([
             'status' => '200',

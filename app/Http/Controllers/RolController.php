@@ -57,7 +57,7 @@ class RolController extends Controller
 
     public function getDataById (Request $request){
 
-        $rol= rol::where('id', $request->id->get());
+        $rol= rol::where('id', $request->id)->get();
 
         return response()->json([
             'status' => '200',

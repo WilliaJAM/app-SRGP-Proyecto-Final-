@@ -64,7 +64,7 @@ class SaleController extends Controller
 
     public function getDataById(Request $request){
 
-        $sale= sale::where('id', $request->id->get());
+        $sale= sale::where('id', $request->id)->get();
 
         return response()-> json([
             'status' => '200',

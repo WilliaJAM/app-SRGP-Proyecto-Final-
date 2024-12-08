@@ -65,7 +65,7 @@ class CitiesController extends Controller
 
     public function getDataById (Request $request){
 
-        $city=cities::where('id', $request->id->get());
+        $city=cities::where('id', $request->id)->get();
         
         return response()->json([
             'status' => 'Conectado',

@@ -72,7 +72,7 @@ class ProductController extends Controller
 
     public function getDataById (Request $request){
 
-        $product= product::where('id', $request->id->get());
+        $product= product::where('id', $request->id)->get();
 
         return response()->json([
             'status' => '200',

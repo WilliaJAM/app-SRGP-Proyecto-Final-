@@ -74,9 +74,9 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function getdDataById (Request $request){
+    public function getDataById (Request $request){
 
-        $customer= customer::where('id', $request->id->get());
+        $customer= customer::where('id', $request->id)->get();
 
         return response()->json([
             'status' => '200',

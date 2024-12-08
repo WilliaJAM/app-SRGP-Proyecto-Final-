@@ -62,7 +62,7 @@ class DepartmentController extends Controller
 
     public function getDataById (Request $request){
 
-        $department= department::where('id', $request->id->get());
+        $department= department::where('id', $request->id)->get();
 
         return response()->json([
             'status' => 'Conectado',

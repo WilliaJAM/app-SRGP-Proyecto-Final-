@@ -68,7 +68,7 @@ class SupplierController extends Controller
 
     public function getDataById(Request $request){
 
-        $supplier= supplier::all('id', $request->id->get());
+        $supplier= supplier::where('id', $request->id)->get();
 
         return response()->json([
             'status' => 'Conectado',

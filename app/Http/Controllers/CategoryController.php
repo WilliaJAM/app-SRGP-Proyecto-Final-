@@ -60,7 +60,7 @@ class CategoryController extends Controller
 
     public function getDataById (Request $request){
 
-    $category= category::where('id', $request->id->get());
+    $category= category::where('id', $request->id)->get();
 
     return response()->json([
         'status' => 'Conectado',
