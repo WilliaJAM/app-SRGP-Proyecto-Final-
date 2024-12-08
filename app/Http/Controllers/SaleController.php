@@ -61,4 +61,15 @@ class SaleController extends Controller
             'message' => 'Eliminado con exito'
         ]);
     }
+
+    public function getDataById(Request $request){
+
+        $sale= sale::where('id', $request->id->get());
+
+        return response()-> json([
+            'status' => '200',
+            'message' => 'Consulta con exito',
+            'result'=> $sale
+        ]);
+    }
 }

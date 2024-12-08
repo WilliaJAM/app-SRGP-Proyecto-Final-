@@ -92,4 +92,16 @@ class UserTableController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+
+    public function getDataById(Request $request){
+
+        $user= user_table::where('id', $request->id->get());
+
+        return response()-> json([
+            'status' => '200',
+            'message' => 'Consulta con exito',
+            'result'=> $user
+        ]);
+    }
+
 }

@@ -54,4 +54,15 @@ class RolController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+
+    public function getDataById (Request $request){
+
+        $rol= rol::where('id', $request->id->get());
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'Consulta con exito',
+            'result'=> $rol
+        ]);
+    }
 }

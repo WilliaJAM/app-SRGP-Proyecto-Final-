@@ -59,4 +59,15 @@ class DepartmentController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+
+    public function getDataById (Request $request){
+
+        $department= department::where('id', $request->id->get());
+
+        return response()->json([
+            'status' => 'Conectado',
+            'message' => 'Consulta con exito',
+            'result'=>$department
+        ]);
+    }
 }

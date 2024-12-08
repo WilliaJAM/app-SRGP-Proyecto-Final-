@@ -61,4 +61,14 @@ class DetailOfTheSaleController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+    
+    public function getDataById(Request $request){
+
+        $detailSale= detail_of_the_sale::where('id', $request->id->get());
+        return response()->json([
+            'status' => '200',
+            'message' => 'Consulta con exito',
+            "result"=> $detailSale
+        ]);
+    }
 }

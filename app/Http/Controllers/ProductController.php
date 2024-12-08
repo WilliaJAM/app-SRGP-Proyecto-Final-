@@ -69,4 +69,16 @@ class ProductController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+
+    public function getDataById (Request $request){
+
+        $product= product::where('id', $request->id->get());
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'Consulta con exito',
+            'result'=> $product
+        ]);
+    }
+
 }
