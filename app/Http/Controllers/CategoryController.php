@@ -57,4 +57,15 @@ class CategoryController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+
+    public function getDataById (Request $request){
+
+    $category= category::where('id', $request->id->get());
+
+    return response()->json([
+        'status' => 'Conectado',
+        'message' => 'Consulta con exito',
+        'result' => $category
+    ]);
+    }
 }

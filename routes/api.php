@@ -32,6 +32,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(CategoryController::class)->group(function(){
     Route::get('/category/get','get');
+    Route::get('/category/get','get');
     Route::post('/category/save','save');
     Route::put('/category/update','update');
     Route::delete('/category/delete','delete');
