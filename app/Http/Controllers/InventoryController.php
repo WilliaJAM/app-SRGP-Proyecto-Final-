@@ -67,4 +67,15 @@ class InventoryController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+
+    public function getDataById (Request $request){
+
+        $inventory= inventory::where('id', $request->id->get());
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'Consulta con exito',
+            'result'=> $inventory
+        ]);
+    }
 }

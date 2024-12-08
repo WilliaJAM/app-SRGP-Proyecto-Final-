@@ -73,4 +73,15 @@ class CustomerController extends Controller
             'message' => 'Eliminado correctamente'
         ]);
     }
+
+    public function getdDataById (Request $request){
+
+        $customer= customer::where('id', $request->id->get());
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'Consulta con exito',
+            'result'=> $customer
+        ]);
+    }
 }

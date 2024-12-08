@@ -65,4 +65,15 @@ class SupplierController extends Controller
             'message' => 'Eliminado con exito'
         ]);
     }
+
+    public function getDataById(Request $request){
+
+        $supplier= supplier::all('id', $request->id->get());
+
+        return response()->json([
+            'status' => 'Conectado',
+            'message' => 'Consulta con exito',
+            'result' => $supplier
+        ]);
+    }
 }
