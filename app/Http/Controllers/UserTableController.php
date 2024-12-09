@@ -56,7 +56,14 @@ class UserTableController extends Controller
 
     public function update(Request $request){
 
+
+
         $user= user_table::findOrFail($request->id);
+
+        $request->validate([
+            'email' => 'required|email|unique:user_tables,email,' . $user->id,
+        ]);
+
         $user->update([
             "name" => $request->name,
             "last_name" => $request->last_name, 
@@ -67,6 +74,7 @@ class UserTableController extends Controller
             "gender" => $request->gender, 
             "registration_date" => $request->registration_date, 
             "account_status" => $request->account_status, 
+            "phone"=> $request->phone,
             "email" => $request->email, 
             "user_id" => $request->user_id, 
             "rol_id" => $request->rol_id, 
@@ -75,6 +83,7 @@ class UserTableController extends Controller
             "address"=>$request->address,
             "city_id"=>$request->city_id,
         ]);
+
 
         return response()->json([
             'status' => '200',
