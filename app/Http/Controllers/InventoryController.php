@@ -42,12 +42,16 @@ class InventoryController extends Controller
 
     public function update(Request $request){
 
+        $departure_date = Carbon::parse($request->departure_date)->format('Y-m-d');
+        $date_of_entry = Carbon::parse($request->date_of_entry)->format('Y-m-d');
+
+
         $inventory= inventory::findOrFail($request->id);
         $inventory->update([
             "name"=> $request->name,
             "quantity_in_stock"=> $request->quantity_in_stock,
-            "departure_date"=> $request->departure_date,
-            "date_of_entry"=> $request->date_of_entry,
+            "departure_date"=> $departure_date,
+            "date_of_entry"=> $date_of_entry,
             "supplier_id"=> $request->supplier_id,
         ]);
 

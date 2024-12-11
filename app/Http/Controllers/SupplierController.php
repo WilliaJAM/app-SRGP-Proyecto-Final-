@@ -22,7 +22,7 @@ class SupplierController extends Controller
 
     public function save(Request $request){
 
-
+        
         $supplier= supplier::create([
             "supplier_name"=> $request->supplier_name,
             "email"=> $request->email,
